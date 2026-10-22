@@ -1,13 +1,8 @@
 
-var producto;   
-var precio;    
-var cantidad;   
-var total;      
-producto = 'tomate';
-precio = 0.75;
-cantidad = 14;
-total = precio * cantidad;
+const producto = "tomate";
+const precio = 0.75;
+const cantidad = 14;
+const total = precio * cantidad;
+const costo = document.getElementById("cost");
 
-
-var el = document.getElementById('cost');
-el.textContent = producto + ' $' + total;
+costo.textContent = `${cantidad} ${producto}(s) × ${precio.toFixed(2)} $ = ${total.toFixed(2)} $`;

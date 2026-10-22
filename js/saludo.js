@@ -1,20 +1,17 @@
 
-var today = new Date();
-var hourNow = today.getHours();
-var mensajeSaludo;
-
+const today = new Date();
+const hourNow = today.getHours();
+let mensajeSaludo;
 
 console.log(today);
 console.log(hourNow);
 
-if (hourNow > 18) {
-    mensajeSaludo = 'Buenas noches';
-} else if (hourNow > 12) {
-    mensajeSaludo = 'Buenas tardes';
-} else if (hourNow > 0) {
-    mensajeSaludo = 'Buenos d&iacute;as';
+if (hourNow >= 18) {
+    mensajeSaludo = "Buenas noches";
+} else if (hourNow >= 12) {
+    mensajeSaludo = "Buenas tardes";
 } else {
-    mensajeSaludo = 'Bienvenido!!';
+    mensajeSaludo = "Buenos días";
 }
 
-document.write('<h3>' + mensajeSaludo + '</h3>');
+document.getElementById("saludo-hora").textContent = mensajeSaludo;

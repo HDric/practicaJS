@@ -3,40 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Venta de Frutas y Verduras</title>
-    <link rel="stylesheet" href="css/c01.css" />
+    <meta name="description" content="Frutas frescas, productos de temporada y atención cercana en SuperFrutas.">
+    <title>SuperFrutas | Frutas frescas</title>
+    <link rel="stylesheet" href="css/c01.css">
 </head>
-
 <body>
-    <h1>Bienvenidos a SuperFrutas</h1>
+    <header class="site-header" id="inicio">
+        <div class="header-content">
+            <a class="brand" href="#inicio" aria-label="SuperFrutas, ir al inicio">SuperFrutas</a>
+            <nav aria-label="Navegación principal">
+                <a href="#productos">Productos</a>
+                <a href="#factura">Tu compra</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+        <div class="hero">
+            <p class="eyebrow">Frescura de temporada</p>
+            <h1>Frutas y verduras para disfrutar cada día</h1>
+            <h2 id="saludo-hora" class="time-greeting" aria-live="polite"></h2>
+            <p>Productos seleccionados con cariño para llevar lo mejor del campo a tu mesa.</p>
+            <a class="button button-light" href="#productos">Ver productos</a>
+        </div>
+    </header>
 
-   
+    <main>
+        <section class="section" id="productos" aria-labelledby="productos-title">
+            <div class="section-heading">
+                <p class="eyebrow">Del campo a tu mesa</p>
+                <h2 id="productos-title">Productos disponibles</h2>
+                <p>Una selección sencilla de productos frescos para tu hogar.</p>
+            </div>
+            <ul id="product-list" class="product-list" aria-live="polite"></ul>
+        </section>
+
+        <section class="section purchase-section" id="factura" aria-labelledby="factura-title">
+            <div class="purchase-card">
+                <div>
+                    <p class="eyebrow">Ejemplo de compra</p>
+                    <h2 id="factura-title">Resumen de tu compra</h2>
+                    <p id="cost" aria-live="polite">Calculando el total...</p>
+                </div>
+                <div class="stock-list" aria-label="Estado del pedido">
+                    <p class="message">Existencias en bodega <span id="stock" class="status-icon"></span></p>
+                    <p class="message">Enviado a domicilio <span id="envio" class="status-icon"></span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section about-section" aria-labelledby="about-title">
+            <div>
+                <p class="eyebrow">Atención cercana</p>
+                <h2 id="about-title">Gracias por visitarnos, <span id="customer-name"></span></h2>
+                <p>En SuperFrutas creemos que comer fresco puede ser simple y delicioso.</p>
+                <button class="button" id="welcome-button" type="button">Ver mensaje de bienvenida</button>
+            </div>
+            <aside class="browser-card" aria-labelledby="browser-title">
+                <h3 id="browser-title">Tu navegador</h3>
+                <p id="browser-info" aria-live="polite">Detectando navegador...</p>
+            </aside>
+        </section>
+
+        <section class="section contact-section" id="contacto" aria-labelledby="contact-title">
+            <div class="section-heading">
+                <p class="eyebrow">Estamos para ayudarte</p>
+                <h2 id="contact-title">Contáctanos</h2>
+                <p>Completa el formulario y te responderemos pronto.</p>
+            </div>
+            <form id="contact-form" class="contact-form">
+                <label for="name">Nombre</label>
+                <input id="name" name="name" type="text" autocomplete="name" required minlength="2">
+
+                <label for="email">Correo electrónico</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="4" required minlength="10"></textarea>
+
+                <button class="button" type="submit">Enviar mensaje</button>
+                <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p id="document-info"></p>
+        <p>&copy; <span id="current-year"></span> SuperFrutas. Gracias por elegir productos frescos.</p>
+    </footer>
+
+    <aside id="cookie-banner" class="cookie-banner" aria-label="Preferencias de cookies" hidden>
+        <div>
+            <p>Usamos una cookie propia para recordar tu preferencia de cookies en este navegador.</p>
+            <p id="cookie-feedback" class="cookie-feedback" role="status" aria-live="polite"></p>
+        </div>
+        <div class="cookie-actions">
+            <button id="accept-cookies" class="button button-light" type="button">Aceptar</button>
+            <button id="decline-cookies" class="button button-outline" type="button">Ahora no</button>
+        </div>
+    </aside>
+
     <script src="js/saludo.js"></script>
-
-
-    <p>
-        <em>Productos Disponibles para la Venta</em>
-    </p>
-    <div id="cost">Costo:</div>
-    <script src="js/factura.js"></script>
-
-
-    <div class="message">Existencias en bodega
-        <span id="stock"></span>
-    </div>
-    <div class="message">Enviado a domicilio
-        <span id="envio"></span>
-    </div>
-    <script src="js/stock.js"></script>
-
-
     <script src="js/productos.js"></script>
-
-
+    <script src="js/factura.js"></script>
+    <script src="js/stock.js"></script>
     <script src="js/clientes.js"></script>
-    <script>saludo();</script>
-
-
+    <script src="js/cookies.js"></script>
     <script src="js/documento.js"></script>
 </body>
 </html>
