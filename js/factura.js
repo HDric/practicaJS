@@ -1,8 +1,18 @@
 
-const producto = "tomate";
-const precio = 0.75;
-const cantidad = 14;
-const total = precio * cantidad;
 const costo = document.getElementById("cost");
 
-costo.textContent = `${cantidad} ${producto}(s) × ${precio.toFixed(2)} $ = ${total.toFixed(2)} $`;
+// Se calcula sobre el arreglo compartido para evitar duplicar precios y cantidades.
+function calcularTotal() {
+    const total = productos.reduce(function (acumulado, producto) {
+        return acumulado + producto.precio * producto.cantidad;
+    }, 0);
+
+    const unidades = productos.reduce(function (acumulado, producto) {
+        return acumulado + producto.cantidad;
+    }, 0);
+
+    costo.textContent = `${unidades} producto(s) · Total: ${total.toFixed(2)} $`;
+}
+
+window.addEventListener("productosActualizados", calcularTotal);
+calcularTotal();

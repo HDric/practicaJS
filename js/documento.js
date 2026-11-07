@@ -1,6 +1,5 @@
 const documentInfo = document.getElementById("document-info");
 const currentYear = document.getElementById("current-year");
-const browserInfo = document.getElementById("browser-info");
 
 console.log("URL de la página:", document.URL);
 console.log("Título de la página:", document.title);
@@ -26,4 +25,4 @@ for (let i = 0; i < navegadorReglas.length; i++) {
     }
 }
 
-browserInfo.textContent = `${navegador} · idioma ${navigator.language}`;
+console.log(`Navegador detectado: ${navegador} · idioma ${navigator.language}`);

@@ -10,6 +10,7 @@ function existePreferenciaDeCookies() {
 
 function guardarPreferenciaCookies(preferencia) {
     const secure = window.location.protocol === "https:" ? "; Secure" : "";
+    // SameSite limita el envío de esta preferencia a navegación del mismo sitio.
     document.cookie = `${cookiePreference}${preferencia}; Max-Age=31536000; Path=/; SameSite=Lax${secure}`;
 
     if (!existePreferenciaDeCookies()) {

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Frutas frescas, productos de temporada y atención cercana en SuperFrutas.">
     <title>SuperFrutas | Frutas frescas</title>
-    <link rel="stylesheet" href="css/c01.css">
+    <link rel="stylesheet" href="css/styles.css?v=20261107">
 </head>
 <body>
     <header class="site-header" id="inicio">
@@ -21,6 +21,7 @@
             <p class="eyebrow">Frescura de temporada</p>
             <h1>Frutas y verduras para disfrutar cada día</h1>
             <h2 id="saludo-hora" class="time-greeting" aria-live="polite"></h2>
+            <p id="fecha-hora" class="current-time" aria-live="polite"></p>
             <p>Productos seleccionados con cariño para llevar lo mejor del campo a tu mesa.</p>
             <a class="button button-light" href="#productos">Ver productos</a>
         </div>
@@ -32,6 +33,10 @@
                 <p class="eyebrow">Del campo a tu mesa</p>
                 <h2 id="productos-title">Productos disponibles</h2>
                 <p>Una selección sencilla de productos frescos para tu hogar.</p>
+            </div>
+            <div class="catalog-actions" aria-label="Acciones del catálogo">
+                <button class="button button-secondary" id="clear-purchase" type="button">Limpiar</button>
+                <button class="button" id="restore-products" type="button">Restaurar productos</button>
             </div>
             <ul id="product-list" class="product-list" aria-live="polite"></ul>
         </section>
@@ -57,10 +62,6 @@
                 <p>En SuperFrutas creemos que comer fresco puede ser simple y delicioso.</p>
                 <button class="button" id="welcome-button" type="button">Ver mensaje de bienvenida</button>
             </div>
-            <aside class="browser-card" aria-labelledby="browser-title">
-                <h3 id="browser-title">Tu navegador</h3>
-                <p id="browser-info" aria-live="polite">Detectando navegador...</p>
-            </aside>
         </section>
 
         <section class="section contact-section" id="contacto" aria-labelledby="contact-title">
@@ -101,12 +102,13 @@
         </div>
     </aside>
 
-    <script src="js/saludo.js"></script>
-    <script src="js/productos.js"></script>
-    <script src="js/factura.js"></script>
-    <script src="js/stock.js"></script>
-    <script src="js/clientes.js"></script>
-    <script src="js/cookies.js"></script>
-    <script src="js/documento.js"></script>
+    <script src="js/saludo.js?v=20261107"></script>
+    <script src="js/productos.js?v=20261107"></script>
+    <script src="js/factura.js?v=20261107"></script>
+    <script src="js/stock.js?v=20261107"></script>
+    <script src="js/clientes.js?v=20261107"></script>
+    <script src="js/cookies.js?v=20261107"></script>
+    <script src="js/documento.js?v=20261107"></script>
+    <script src="js/main.js?v=20261107"></script>
 </body>
 </html>

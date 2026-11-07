@@ -27,6 +27,7 @@ const formFeedback = document.getElementById("form-feedback");
 contactForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
+    // La validación nativa evita procesar datos incompletos o con formato inválido.
     if (!contactForm.checkValidity()) {
         contactForm.reportValidity();
         return;

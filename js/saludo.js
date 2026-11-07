@@ -2,6 +2,7 @@
 const today = new Date();
 const hourNow = today.getHours();
 let mensajeSaludo;
+const fechaHora = document.getElementById("fecha-hora");
 
 console.log(today);
 console.log(hourNow);
@@ -15,3 +16,7 @@ if (hourNow >= 18) {
 }
 
 document.getElementById("saludo-hora").textContent = mensajeSaludo;
+fechaHora.textContent = today.toLocaleString("es-EC", {
+    dateStyle: "long",
+    timeStyle: "short"
+});
