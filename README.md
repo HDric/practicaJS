@@ -19,7 +19,7 @@ Abre `index.html` desde un servidor web (por ejemplo, Tomcat). El servidor permi
 
 El diseño adaptable y la animación de las tarjetas de producto están definidos en `css/styles.css`. El código está modularizado por responsabilidad y utiliza APIs nativas del navegador para evitar dependencias innecesarias; la única librería externa es Google Fonts para la tipografía.
 
-En el catálogo, `Eliminar de la compra` conserva el producto y establece su cantidad en cero. Los botones `Restaurar productos` y `Limpiar` restauran las cantidades iniciales o dejan la compra en cero, respectivamente.
+En el catálogo, `Eliminar de la compra` conserva el producto y establece su cantidad en cero. Las cantidades se normalizan a unidades enteras no negativas. Los botones `Restaurar productos` y `Limpiar` restauran las cantidades iniciales o dejan la compra en cero, respectivamente.
 
 ## Estructura
 

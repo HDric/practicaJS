@@ -10,6 +10,11 @@ const cantidadesIniciales = productos.map(function (producto) {
 });
 const listaProductos = document.getElementById("product-list");
 
+function normalizarCantidad(valor) {
+    const cantidad = Number(valor);
+    return Number.isFinite(cantidad) ? Math.max(0, Math.floor(cantidad)) : 0;
+}
+
 for (let i = 0; i < productos.length; i++) {
     const productoActual = productos[i];
     console.log(productoActual);
@@ -35,7 +40,7 @@ for (let i = 0; i < productos.length; i++) {
     cantidad.type = "number";
     cantidad.min = "0";
     cantidad.step = "1";
-    cantidad.value = String(productoActual.cantidad);
+    cantidad.value = String(normalizarCantidad(productoActual.cantidad));
     cantidad.setAttribute("aria-label", `Cantidad de ${productoActual.nombre}`);
     cantidad.dataset.productIndex = String(i);
     etiquetaCantidad.appendChild(cantidad);
@@ -57,7 +62,7 @@ for (let i = 0; i < productos.length; i++) {
 function actualizarCatalogo(event) {
     const indice = Number(event.target.dataset.productIndex);
     if (event.target.classList.contains("quantity-input")) {
-        productos[indice].cantidad = Math.max(0, Number(event.target.value) || 0);
+        productos[indice].cantidad = normalizarCantidad(event.target.value);
         event.target.value = String(productos[indice].cantidad);
         window.dispatchEvent(new CustomEvent("productosActualizados"));
     }
@@ -71,7 +76,7 @@ function actualizarCatalogo(event) {
 
 function actualizarCantidades(cantidadPorDefecto) {
     productos.forEach(function (producto, indice) {
-        producto.cantidad = cantidadPorDefecto(indice);
+        producto.cantidad = normalizarCantidad(cantidadPorDefecto(indice));
         listaProductos.querySelector(`[data-product-index="${indice}"].quantity-input`).value = String(producto.cantidad);
     });
     window.dispatchEvent(new CustomEvent("productosActualizados"));

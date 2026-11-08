@@ -23,6 +23,7 @@ document.getElementById("welcome-button").addEventListener("click", function () 
 
 const contactForm = document.getElementById("contact-form");
 const formFeedback = document.getElementById("form-feedback");
+const nameInput = document.getElementById("name");
 
 contactForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -33,7 +34,13 @@ contactForm.addEventListener("submit", function (event) {
         return;
     }
 
-    const nombre = document.getElementById("name").value.trim();
+    const nombre = nameInput.value.trim();
+    if (!nombre) {
+        formFeedback.textContent = "Ingresa un nombre válido.";
+        nameInput.focus();
+        return;
+    }
+
     formFeedback.textContent = `Gracias, ${nombre}. Tu mensaje fue validado correctamente.`;
     contactForm.reset();
 });
